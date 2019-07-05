@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+
+    <link href="css/jquery.notify.css" rel="stylesheet">
+    <script src="js/jquery.notify.min.js"></script>
+
+    <style type="text/css">
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: blue;
+        }
+    </style>
+    <title></title>
+</head>
+
+<body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 navbar-dark bg-dark border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal text-white">Consulta Cep e Localidades</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-white" href="Cep.html">Cep</a>
+            <a class="p-2 text-white" href="Localidade.html">Localidade</a>
+            <a class="p-2 text-white" href="#">Informações</a>
+            <a class="p-2 text-white" href="#">Contato</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h6 class="pb-4 mb-4 font-italic border-bottom"></h6>
+
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-6">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">*</span>
+                    </div>
+                    <input type="text" placeholder="Digite o CEP" class="form-control" id="Cep" name="Cep" aria-describedby="basic-addon3" maxlength="10">
+
+                </div>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-outline-success" id="botao1">Buscar</button>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+
+        <h6 class="pb-4 mb-4 font-italic border-bottom"></h6>
+
+        <div id="campos_retorno" style="display: none">
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblCep"></label>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblLogr"></label>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblComp"></label>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblBair"></label>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblLoca"></label>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblUf"></label>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblUnid"></label>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblIbge"></label>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <label id="lblGia"></label>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/lrscript.js"></script>
+</body>
+</html>

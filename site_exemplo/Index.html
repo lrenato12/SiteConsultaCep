@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Referencia local -->
+    <!--<script src="js/jquery-3.4.1.min.js"></script>-->
+    
+    <!-- Referencia por cdn-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+
+    <h1>Aula 3</h1>
+    <p>Conhecendo e utilizando o jQuery</p>
+    <i>Teste ocultacao com tipo</i>
+    <span id="identificador">Span com identificador</span>
+    <button title="Texto">Button com title</button>
+    <a href="#" title="Oi">Link com valor Oi no title</a>
+    <input class="classe" value="Input com classe 'classe'" />
+
+    <hr />
+
+    <button id="botao1">Tipo</button>
+    <button id="botao2">Identificador</button>
+    <button id="botao3">Atributo</button>
+    <button id="botao4">Atributo com valor</button>
+    <button id="botao5">Classe</button>
+
+    <script type="text/javascript">
+        $(function () {
+            $(document).ready(function () {
+                ////$(selector).Acao(funcao);
+
+                ////Ocultação de todos os elementos com tag "p" - paragrafo
+                //$("p").hide();
+
+                ////Exibição do elemento "identificador" / ID
+                //$("#identificador").show();
+
+                ////Ocultação de todos os elementos que possuirem o atributo title
+                //$("[title]").hide();
+
+                ////Ocultação de todos os elementos que possuirem como valor o texto "Oi" no atributi title
+                //$("[title='Oi']").hide();
+
+                ////Ocultacao de todos os elementos que possuirem a classe "classe"
+                //$(".classe").hide();
+            });
+
+            $("#botao1").click(function () {
+                //alert("VAI CORINTHIANS");
+                $("i").hide();
+            });
+
+            $("#botao2").click(function () {
+                $("#identificador").css("color", "red");
+            });
+
+            $("#botao3").click(function () {
+                $("[title]").text("Curso Bellatrix Framework");
+            });
+
+            $("#botao4").click(function () {
+                $("[title='Oi']").css("font-size", "large");
+            });
+
+            $("#botao5").click(function () {
+                alert($(".classe").val());
+            });
+        });
+
+    </script>
+</body>
+</html>

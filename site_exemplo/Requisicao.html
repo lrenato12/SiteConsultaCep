@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Referencia local -->
+    <!--<script src="js/jquery-3.4.1.min.js"></script>-->
+    <!-- Referencia por cdn-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: blue;
+        }
+    </style>
+    <title></title>
+</head>
+
+<body>
+    <button id="botao1">Requisicao</button>
+
+    <hr />
+
+    <div class="box"></div>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#botao1").click(function () {
+                $(".box").css({
+                    "height": "400px",
+                    "overflow-y": "scroll",
+                    "padding": "10px"
+                });
+
+                $.ajax({
+                    url: "http://bellatrix.consinco.com.br/_assets/json/nomes.json",
+                    success: function (retorno) {
+                        $.each(retorno, function () {
+                            $(".box").append(this.nome);
+                            $(".box").append("<br />");
+                        });
+                    }
+                });
+
+                //falert(unction handler() {
+                //    if (this.readState == 4 && this.status == 200) {
+                //        if (this.responseXML != null && this.responseXML.getElementById('teste').firstChild.data)
+                //            //sucess
+                //            alert(this.responseXML.getElementById('teste').firstChild.data);
+                //        else
+                //            return false;
+                //    }
+                //    else if (this.readState == 4 && this.status != 200) {
+                //        //pagina nao encontrada
+                //        return false
+                //    }
+
+                //    var client = new XMLHttpRequest();
+                //    client.onreadystatechange = handler;
+                //    client.open("GET", "arquivo.html");
+                //    client.send();
+                //});
+            });
+        });
+    </script>
+</body>
+</html>
