@@ -1,5 +1,5 @@
 ﻿$(function () {
-    $("#botao2").click(function () {
+    $("#btnBuscarLoc").click(function () {
         var originbtn = this.innerHTML;
         this.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
 
@@ -56,19 +56,11 @@
 });
 
 $(function () {
-    $("#botao1").click(function () {
+    $("#btnBuscarCep").click(function () {
         var originbtn = this.innerHTML;
         this.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
 
         $("#campos_retorno").hide();
-
-        $(".box").empty();
-        $(".box").css({
-            "height": "400px",
-            "overflow-y": "scroll",
-            "padding": "10px",
-            "background-color": "orange"
-        });
 
         var valor = $("#Cep").val().replace('-', '').replace('.', '');
         if (valor == "") {
@@ -79,19 +71,13 @@ $(function () {
         $.ajax({
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
-            //url: "http://cep.lrenato12.com/api/Ceps?cep=14305074&SearchCoordinates=true",
             url: "https://viacep.com.br/ws/" + valor + "/json/",
             success: function (retorno) {
-
-                //https://forum.jquery.com/topic/changing-a-div-or-table-cell-to-visible-using-jquery
-
                 var comp = retorno.erro;
-                if (comp == true)
-                {
+                if (comp == true) {
                     MethodNotify("success", "Atenção!", "Cep não localizado.", "alert");
                 }
-                else
-                {
+                else {
                     $("#campos_retorno").show();
                     $('#lblCep').text("Cep: " + retorno.cep);
                     $('#lblLogr').text("Logradouro: " + retorno.logradouro);
