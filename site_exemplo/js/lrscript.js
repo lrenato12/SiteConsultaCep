@@ -41,7 +41,7 @@
                     var ibge = retorno[i].ibge;
                     var gia = retorno[i].gia;
 
-                    $("#generated").append("<tr><td>" + cep + "</td><td>" + logradouro + "</td><td>" + complemento + "</td><td>" + bairro + "</td><td>" + localidade + "</td><td>" + uf + "</td><td>" + ibge + "</td><td>" + gia + "</td></tr>");
+                    $("#generated").append("<tr><td>" + cep + "</td><td>" + logradouro + "</td><td>" + complemento + "</td><td>" + bairro + "</td><td>" + localidade + "</td><td>" + uf + "</td><td>" + ibge + "</td>" + "</tr>");
                 }
 
                 MethodNotify("success", "Atenção!", "Consulta realizada com sucesso.", "sucess");
