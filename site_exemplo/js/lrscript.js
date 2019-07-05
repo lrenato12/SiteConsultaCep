@@ -10,17 +10,7 @@
         var munvalor = $("#Municipio").val().replace(" ", "%20");
         var endvalor = $("#Endereco").val().replace(" ", "%20");
 
-        if (ufvalor == "" || munvalor == "") {
-            this.innerHTML = originbtn;
-            MethodNotify("warning", "Atenção!", "Insira UF/Municipio", "alert");
-            return;
-        }
-        else if (endvalor.length <= 3) {
-            this.innerHTML = originbtn;
-            MethodNotify("warning", "Atenção!", "Digite um endereco com mais de 3 caracteres. Quantidade atual: " + endvalor.length, "alert");
-            return;
-        }
-
+        ValidateFields(ufvalor, munvalor, endvalor);
         $.ajax({
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
@@ -124,3 +114,19 @@ $(function () {
         $seuCampoCpf.mask('00.000-000', { reverse: true });
     });
 });
+
+function ValidateFields(uf, mun, end) {
+
+    if (uf == "" || mun == "") {
+        this.innerHTML = originbtn;
+        MethodNotify("warning", "Atenção!", "Insira UF/Municipio", "alert");
+        return false;
+    }
+    else if (end.length <= 3) {
+        this.innerHTML = originbtn;
+        MethodNotify("warning", "Atenção!", "Digite um endereco com mais de 3 caracteres. Quantidade atual: " + endvalor.length, "alert");
+        return false;
+    }
+
+    return true;
+}

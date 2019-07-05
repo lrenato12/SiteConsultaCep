@@ -8,3 +8,5 @@
 /.vs/site_exemplo/v15/Server/sqlite3/storage.ide
 /.vs/config/applicationhost.config
 /.vs/site_exemplo/v15/.suo
+/site_exemplo/bin
+/site_exemplo/obj
