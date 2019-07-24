@@ -2,6 +2,7 @@
     $("#btnBuscarLoc").click(function () {
         var originbtn = this.innerHTML;
         this.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Carregando...';
+        
 
         $("#generated").hide();
         $('#generated tbody').empty();
