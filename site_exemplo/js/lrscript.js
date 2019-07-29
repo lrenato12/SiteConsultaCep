@@ -2,7 +2,7 @@
     $("#btnBuscarLoc").click(function () {
         var originbtn = this.innerHTML;
         this.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Carregando...';
-        
+
 
         $("#generated").hide();
         $('#generated tbody').empty();
@@ -67,8 +67,7 @@ $(function () {
                 var comp = retorno.erro;
                 if (comp == true) {
                     MethodNotify("success", "Atenção!", "Cep não localizado.", "alert");
-                }
-                else {
+                } else {
                     $("#campos_retorno").show();
                     $('#lblCep').text("Cep: " + retorno.cep);
                     $('#lblLogr').text("Logradouro: " + retorno.logradouro);
@@ -95,9 +94,26 @@ $(function () {
 function MethodNotify(par_type, par_title, par_message, par_icon = "paper_plane") {
 
     notify({
-        type: par_type, title: par_title, message: par_message, position: { x: "right", y: "bottom" }, icon: '<img src="images/' + par_icon + '.png" />',
-        size: "normal", overlay: false, closeBtn: true, overflowHide: false, spacing: 20, theme: "default", autoHide: true, delay: 2500,
-        onShow: null, onClick: null, onHide: null, template: '<div class="notify"><div class="notify-text"></div></div>'
+        type: par_type,
+        title: par_title,
+        message: par_message,
+        position: {
+            x: "right",
+            y: "bottom"
+        },
+        icon: '<img src="images/' + par_icon + '.png" />',
+        size: "normal",
+        overlay: false,
+        closeBtn: true,
+        overflowHide: false,
+        spacing: 20,
+        theme: "default",
+        autoHide: true,
+        delay: 2500,
+        onShow: null,
+        onClick: null,
+        onHide: null,
+        template: '<div class="notify"><div class="notify-text"></div></div>'
     });
 }
 
@@ -112,7 +128,9 @@ $(function () {
 $(function () {
     $(document).ready(function () {
         var $seuCampoCpf = $("#Cep");
-        $seuCampoCpf.mask('00.000-000', { reverse: true });
+        $seuCampoCpf.mask('00.000-000', {
+            reverse: true
+        });
     });
 });
 
@@ -122,8 +140,7 @@ function ValidateFields(uf, mun, end) {
         this.innerHTML = originbtn;
         MethodNotify("warning", "Atenção!", "Insira UF/Municipio", "alert");
         return false;
-    }
-    else if (end.length <= 3) {
+    } else if (end.length <= 3) {
         this.innerHTML = originbtn;
         MethodNotify("warning", "Atenção!", "Digite um endereco com mais de 3 caracteres. Quantidade atual: " + endvalor.length, "alert");
         return false;
